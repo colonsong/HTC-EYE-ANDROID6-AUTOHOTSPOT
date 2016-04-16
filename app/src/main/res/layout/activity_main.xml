@@ -9,8 +9,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tw.waterdrop.autohotspot.MainActivity">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="熱點監控"
+        android:id="@+id/startScan"
+        android:onClick="startScan"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/stopScan" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止偵測"
+        android:id="@+id/stopScan"
+        android:onClick="stopScan"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/startScan"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

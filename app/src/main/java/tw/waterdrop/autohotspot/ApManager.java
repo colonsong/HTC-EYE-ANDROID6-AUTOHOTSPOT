@@ -24,16 +24,17 @@ public class ApManager {
     }
 
     // toggle wifi hotspot on or off
-    public static boolean configApState(Context context) {
+    public static boolean configApState(Context context, Boolean APEnable) {
         WifiManager wifimanager = (WifiManager) context.getSystemService(context.WIFI_SERVICE);
         WifiConfiguration wificonfiguration = null;
         try {
             // if WiFi is on, turn it off
-            if(isApOn(context)) {
-                wifimanager.setWifiEnabled(false);
+            if(! isApOn(context) || ! APEnable) {
+               //wifimanager.setWifiEnabled(false);
+                Method method = wifimanager.getClass().getMethod("setWifiApEnabled", WifiConfiguration.class, boolean.class);
+                method.invoke(wifimanager, wificonfiguration, APEnable);
             }
-            Method method = wifimanager.getClass().getMethod("setWifiApEnabled", WifiConfiguration.class, boolean.class);
-            method.invoke(wifimanager, wificonfiguration, !isApOn(context));
+
             return true;
         }
         catch (Exception e) {
