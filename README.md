@@ -5,7 +5,7 @@
 
 https://play.google.com/store/apps/details?id=tw.waterdrop.autohotspot&hl=zh_TW
 
-相關的技術文
+#相關的技術文
 
 流程是註冊一個Receiver - android.net.wifi.WIFI_AP_STATE_CHANGED
 
@@ -15,7 +15,7 @@ receiver寫在mainfest裡為了應用程式結束時這receiver還是能夠被�
 
 加了兩個button為了睡覺時能夠結束WIFI熱點並且停止繼續監聽熱點
 
-參考
+#參考
 
 JAVA反射 https://getpocket.com/a/read/809459355
 
